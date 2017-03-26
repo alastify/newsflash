@@ -18,6 +18,7 @@ from django.contrib import admin
 from flashes.views import news, detail, pridat, promo
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import info, kontakt
 
 
 urlpatterns = [
@@ -25,5 +26,7 @@ urlpatterns = [
     url("^zprava/pridat/$", name="pridat", view=pridat),
     url("^zprava/(?P<id>[0-9-]+)/$", name="detail", view=detail),
     url("^promo/(?P<id>[0-9-]+)/$", name="promo", view=promo),
+    url("^info/$", name="info", view=info),
+    url("^kontakt/$", name="kontakt", view=kontakt),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

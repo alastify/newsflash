@@ -1,5 +1,8 @@
 {% load staticfiles %}
 
+{# Hint: Pro generování itemů pro carousel využijete nejspíše následující kód pro označení prvního itemu #}
+{# Vložte jej přímo v class="{% if forloop.first %}active{% endif %}"   #}
+
 <ul>
 {% for zprava in promo %}
     <li>

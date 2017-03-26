@@ -18,9 +18,9 @@
 
 <body id="{% block body_id %}body{% endblock %}">
 {% block main %}
-    <div class="{% block content_css %}{% endblock %}">
-        {% block content %}(no content){% endblock %}
-    </div>
+
+    {% block content %}(no content){% endblock %}
+    
 {% endblock %}
 
 {% block footer_js %}

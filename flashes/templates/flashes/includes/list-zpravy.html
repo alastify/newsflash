@@ -1,4 +1,9 @@
-{% load staticfiles %}
+
+{# Obdobná finta jako u kolotoče je i zde #}
+{# Abyste od sebe odlišili sudé a liché zprávy, všimněte si, kde se všude mnění třídy a použijte následující kód #}
+{#   class="{% if forloop.counter|divisibleby:2 %}col-md-push-5{% endif %}"   #}
+
+{# U obrázků nahraďte dat-src za obyčejné src #}
 
 <ul>
 {% for zprava in zpravy %}
