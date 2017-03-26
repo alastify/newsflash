@@ -1,0 +1,30 @@
+
+<form class="" action="/zprava/pridat/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- Titulek -->
+    {% if form.titulek.errors %}
+    <ul>
+        {% for error in form.titulek.errors %}
+            <li>{{ error|escape }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <input type="text" name="titulek" value="{{ form.titulek.value }}">
+
+    <!-- Obsah -->
+    <textarea name="obsah">{{ form.obsah.value }}</textarea>
+
+    <!-- Obrázek -->
+    {% if form.obrazek.errors %}
+    <ul>
+        {% for error in form.obrazek.errors %}
+            <li>{{ error|escape }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <input type="file" name="obrazek">
+
+    <input type="submit" name="" value="Odeslat">
+
+</form>

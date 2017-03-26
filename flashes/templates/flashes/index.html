@@ -1,0 +1,16 @@
+
+{% extends 'newsflash/base.html' %}
+
+{% block title %}Newsflash{% endblock %}
+
+{% block content %}
+    <h1>Promo</h1>
+    {% include "flashes/includes/list-promo.html" %}
+
+    <h1>Hlavní</h1>
+    {% include "flashes/includes/list-hlavni.html" %}
+
+    <h1>Zprávy</h1>
+    {% include "flashes/includes/list-zpravy.html" %}
+
+{% endblock %}

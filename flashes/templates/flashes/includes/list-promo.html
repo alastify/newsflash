@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<ul>
+{% for zprava in promo %}
+    <li>
+        <a href="{{ zprava.url }}">{{ zprava.titulek }}</a>
+        {{ zprava.obsah }}
+        {% if zprava.obrazek %}
+        <img src="{{ zprava.obrazek.url }}" alt="">
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>

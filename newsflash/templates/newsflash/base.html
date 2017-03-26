@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+{% load staticfiles %}
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block title %}{% endblock %}{% if settings.SITE_TITLE %} {{ settings.SITE_TITLE }}{% endif %}</title>
+    <link rel="shortcut icon" href="{% static "newsflash/img/favicon.ico" %}">
+
+    <link rel="stylesheet" href="{% static "newsflash/css/custom.css" %}">
+    {% block extra_css %}{% endblock %}
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}body{% endblock %}">
+{% block main %}
+    <div class="{% block content_css %}{% endblock %}">
+        {% block content %}(no content){% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer_js %}
+<script src="{% static "newsflash/js/custom.js" %}"></script>
+{% block extra_js %}{% endblock %}
+{% endblock %}
+
+</body>
+</html>

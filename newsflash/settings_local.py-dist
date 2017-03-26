@@ -1,0 +1,12 @@
+
+from newsflash.settings import INSTALLED_APPS
+
+INSTALLED_APPS.append('debug_toolbar')
+
+SECRET_KEY = '#&u#ec6xc#)bux^^mlx3*ife2x9)pzt9l*s12v51v1-u@uu-*f'
+
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+CORS_ORIGIN_ALLOW_ALL = True
