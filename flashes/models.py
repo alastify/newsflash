@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 from django.core.urlresolvers import reverse
 
 
@@ -38,10 +37,9 @@ class Zpravy(models.Model):
 
     def url(self):
         url_name = "detail"
-        kwargs = { "id": self.id}
+        kwargs = {"id": self.id}
 
         return reverse(url_name, kwargs=kwargs)
-
 
     def __str__(self):
         return self.titulek
@@ -76,10 +74,9 @@ class Kolotoc(models.Model):
 
     def url(self):
         url_name = "promo"
-        kwargs = { "id": self.id}
+        kwargs = {"id": self.id}
 
         return reverse(url_name, kwargs=kwargs)
-
 
     def __str__(self):
         return self.titulek

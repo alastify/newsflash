@@ -6,4 +6,4 @@ class ZpravyForm(forms.ModelForm):
 
     class Meta:
         model = Zpravy
-        fields = [ 'titulek', 'obsah', 'obrazek' ]
+        fields = ['titulek', 'obsah', 'obrazek', 'hlavni', ]

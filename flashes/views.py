@@ -1,15 +1,12 @@
-from django.template.response import TemplateResponse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Zpravy, Kolotoc
 from .forms import ZpravyForm
-import datetime
 
 
 def news(request, extra_context=None, **kwargs):
 
     context = {
-#        "zpravy": Zpravy.objects.filter(datum__gte=datetime.date.today()),
         "promo": Kolotoc.objects.all().order_by('-id')[:3],
         "hlavni": Zpravy.objects.filter(hlavni__exact=1).order_by('-datum')[:3],
         "zpravy": Zpravy.objects.filter(hlavni__exact=0).order_by('-datum'),
@@ -19,7 +16,6 @@ def news(request, extra_context=None, **kwargs):
     template = loader.get_template('flashes/index.html')
     context.update(extra_context or {})
 
-    #return TemplateResponse(request, template, context).render()
     return HttpResponse(template.render(context, request))
 
 
@@ -37,8 +33,11 @@ def detail(request, id, extra_context=None, **kwargs):
 
 def promo(request, id, extra_context=None, **kwargs):
 
+    banner = Kolotoc.objects.get(pk=id)
+
     context = {
-        "zprava": Zpravy.objects.get(pk=id)
+        "banner": banner,
+        "zprava": banner.zprava,
     }
 
     template = loader.get_template('flashes/promo.html')

@@ -25,6 +25,17 @@
     {% endif %}
     <input type="file" name="obrazek">
 
+    <!-- Hlavní -->
+    {% if form.hlavni.errors %}
+    <ul>
+        {% for error in form.hlavni.errors %}
+            <li>{{ error|escape }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <label>Zařadit mezi hlavní zprávy</label>
+    <input type="checkbox" name="hlavni" value="1">
+
     <input type="submit" name="" value="Odeslat">
 
 </form>

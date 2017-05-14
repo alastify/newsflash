@@ -4,7 +4,13 @@
 {% block title %}{{ zprava.titulek }} | Newsflash{% endblock %}
 
 {% block content %}
-    <h1>{{ zprava.titulek }}</h1>
+    <h1>{{ banner.titulek }}</h1>
+    {{ banner.obsah }}
+    {% if banner.obrazek %}
+    <img src="{{ banner.obrazek.url }}" alt="">
+    {% endif %}
+
+    <h2>{{ zprava.titulek }}</h2>
     ({{ zprava.datum }})
     {{ zprava.obsah }}
     {% if zprava.obrazek %}
